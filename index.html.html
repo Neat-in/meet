@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Meet Me?</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background-color: #fff0f5;
+      text-align: center;
+      padding: 50px;
+    }
+    .message {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    button {
+      font-size: 18px;
+      margin: 10px;
+      padding: 10px 20px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    button:hover {
+      transform: scale(1.1);
+    }
+    .yes-btn {
+      background-color: #8bc34a;
+      color: white;
+    }
+    .no-btn {
+      background-color: #f44336;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="message" id="message">
+    Hi Radhika, I miss you.
+    This is me trying to reserve next Saturday (26th April) abhi se kyuki I want to meet and talk to you.<br>
+    It's about the thing I told you, the pointers, and to spend some time with you that we've not been getting achhe se... Please select the option and send me a video recording.
+  </div>
+  <div id="buttons">
+    <button class="yes-btn" onclick="showYay()">Yes</button>
+    <button class="no-btn" onclick="showNo()">No</button>
+  </div>
+
+  <script>
+    function showYay() {
+      document.getElementById("message").innerHTML = "YAY! Can't wait! 🥰";
+      document.getElementById("buttons").style.display = "none";
+    }
+
+    function showNo() {
+      document.getElementById("message").innerHTML = "Nope. Not a choice.";
+      document.getElementById("buttons").innerHTML = `
+        <button class="yes-btn" onclick="showYay()">Yes</button>
+        <button class="no-btn" onclick="showNo()">No</button>
+      `;
+    }
+  </script>
+
+</body>
+</html>
